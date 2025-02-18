@@ -59,8 +59,10 @@ func SetActivity(activity Activity) error {
 		return err
 	}
 
-	// TODO: Response should be parsed
-	ipc.Send(1, string(payload))
+	var error string = ipc.Send(1, string(payload))
+	if error == "" {
+		return fmt.Errorf("error updating rpc, broken pipe?")
+	}
 	return nil
 }
 
