@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/hugolgst/rich-go/client"
+	"github.com/RafaeloxMC/richer-go/client"
 )
 
 func main() {
@@ -15,10 +15,10 @@ func main() {
 
 	now := time.Now()
 	err = client.SetActivity(client.Activity{
-		State:      "Heyy!!!",
-		Details:    "I'm running on rich-go :)",
+		State:      "Playing",
+		Details:    "RPC is made using richer-go",
 		LargeImage: "largeimageid",
-		LargeText:  "This is the large image :D",
+		LargeText:  "This is the large image",
 		SmallImage: "smallimageid",
 		SmallText:  "And this is the small image",
 		Party: &client.Party{
@@ -27,8 +27,8 @@ func main() {
 			MaxPlayers: 24,
 		},
 		Timestamps: &client.Timestamps{
-			Start: &now,
-		},
+			Start: time.Now(),
+		},	Start: &now,
 		Buttons: []*client.Button{
 			&client.Button{
 				Label: "GitHub",
@@ -45,4 +45,7 @@ func main() {
 	// Sleep for a few seconds to see the update
 	fmt.Println("Sleeping...")
 	time.Sleep(time.Second * 10)
+
+	// Logout - this will stop showing the RPC on the users profile
+	client.Logout()
 }
