@@ -1,4 +1,4 @@
-module github.com/RafaeloxMC/rich-go
+module github.com/RafaeloxMC/richer-go
 
 go 1.17
 
