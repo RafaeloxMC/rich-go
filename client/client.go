@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/hugolgst/rich-go/ipc"
+	"github.com/RafaeloxMC/richer-go/ipc"
 )
 
 var logged bool
